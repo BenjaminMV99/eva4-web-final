@@ -62,137 +62,313 @@ if (isset($_SESSION["user"])) {
         </ul>
         <!-- Fin de la barra de navegacion en modo movil -->
         <br><br>
+        <div class="row">
 
-        <div class="col l2 m4 s12"></div>
-                <div class="col l8 m4 s12">
+            <div class="col l4 m6 s12 offset-m3">
+
+                <form @submit.prevent="buscar">
+
                     <div class="card">
-                        <div class="card-content">
-                            <h4 class="azul center">Ingresar una Receta</h4>
-                            <br><br>
-                            <div class="row" id="app">
-                                <div class="col l6">
-                                    <form @submit.prevent="buscar">
-                                        <input type="text" class="col l6" placeholder="Rut del cliente" v-model="rut">
-                                        <button class="btn fondoazul col l4">BUSCAR</button>
-                                    </form>
-                                </div>
-                                <div class="col l12 m12 s12">
-                                    <p>
-                                     aqui van los datos del clietne
-                                    </p>
-                                </div>
+
+                        <div class="card-content back">
+
+
+                            <h6 class="center">Buscar</h6>
+
+
+
+                            <div class="input-field">
+
+                                <input type="text" v-model="rutCliente">
+                                <label for="rut">Rut</label>
+
                             </div>
-                            <div class="row">
-                        <br>
-                        <div class="col l6" id="cargaCBO">
-                            <Select v-model="id_material_cristal" class="browser-default">
-                                <option disabled selected value="">Seleccione...</option>
-                                <option v-for="m in materiales" :value="m.id_material_cristal">
-                                    {{m.material_cristal}}
-                                </option>
-                            </Select>
-                            <Select v-model="id_tipo_cristal" class="browser-default ">
-                                <option disabled selected value="">Seleccione...</option>
-                                <option v-for="t in tipos" :value="t.id_tipo_cristal">
-                                    {{t.tipo_cristal}}
-                                </option>
-                            </Select>
-                            <Select class="browser-default" v-model="id_armazon">
-                                <option disabled selected value="">Seleccione...</option>
-                                <option v-for="a in armazones" :value="a.id_armazon">
-                                    {{a.nombre_armazon}}
-                                </option>
-                            </Select>
+
+                            <div class="input-field center-align back-field-desactived">
+
+                                <button class="btn-large">Buscar</button>
+                            </div>
+
+
+
+
+
+
                         </div>
-                        <div class="col l3 center azul">
-                            <p>Ojo Izquierdo</p>
-                            <input type="number" placeholder="Esfera" name="esfeizq">
-                            <input type="number" placeholder="Cilindro" name="cilizq">
-                            <input type="number" placeholder="Eje" name="ejeizq">
+
+
+
+
+
+                    </div>
+
+                </form>
+
+
+
+            </div>
+
+
+
+            <div class="col l8 m12 s12 center">
+
+                <div class="card" v-if="clienteexiste">
+
+
+                    <div class="card-content back">
+
+                    <div class="row">
+                        <div class="col s12">
+                            <p class="center">Datos del cliente</p>
+                            <h6 class="center">{{cliente.nombre_cliente}}</h6>          
+                            <h4 class="center unpocodemarginbot">{{cliente.rut_cliente}}</h4>
                         </div>
-                        <div class="col l3 center azul">
-                            <p>Ojo Derecho</p>
-                            <input type="number" placeholder="Esfera" name="esfeder">
-                            <input type="number" placeholder="Cilindro" name="cilder">
-                            <input type="number" placeholder="Eje" name="ejeder">
+                        <div class="col s6">
+                            <p>fono : {{cliente.telefono_cliente}} </p>
+                            <p>correo : {{cliente.email_cliente}} </p>
                         </div>
-                        <div class="col l12">
-                            <hr>
-                            <div class="col l6 m6 s6 azul">
-                                <p>Tipo Lente:</p>
-                                <label>
-                                    <input type="checkbox" name="xx" value="1" />
-                                    <span>Lejos</span>
-                                </label>
-                                <label>
-                                    <input type="checkbox" name="xy" value="2" />
-                                    <span>Cerca</span>
-                                </label>
-                            </div>
-                            <div class="col l3">
-                                <div class="input-field">
-                                    <input id="prisma" type="number" name="prisma">
-                                    <label for="prisma">Prisma</label>
-                                </div>
-                            </div>
-                            <div class="col l3">
-                                <div class="input-field">
-                                    <input id="pupilar" type="number" name="pupilar">
-                                    <label for="pupilar">Distancia Pupilar</label>
-                                </div>
-                            </div>
-                            <div class="col l6">
-                                <div class="input-field">
-                                    <i class="material-icons md-blue prefix">date_range</i>
-                                    <input id="fechaentrega" type="text" class="validate datepicker" name="fechaentrega">
-                                    <label for="fechaentrega">Fecha de entrega</label>
-                                </div>
-                            </div>
-                            <div class="col l6">
-                                <div class="input-field">
-                                    <i class="material-icons md-blue prefix">date_range</i>
-                                    <input id="fecharetiro" type="text" class="validate datepicker" name="fecharetiro">
-                                    <label for="fecharetiro">Fecha de retiro</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col l12">
-                            <hr>
-                            <div class="col l4">
-                                <div class="input-field">
-                                    <input id="rutmed" type="text" name="rutmed">
-                                    <label for="rutmed">Rut del Medico</label>
-                                </div>
-                            </div>
-                            <div class="col l8">
-                                <div class="input-field">
-                                    <input id="nombremed" type="text" name="nombremed">
-                                    <label for="nombremed">Nombre del Medico</label>
-                                </div>
-                            </div>
-                            <div class="col l12">
-                                <div class="input-field">
-                                    <input id="obs" type="text" name="obs">
-                                    <label for="obs">Observaciones</label>
-                                </div>
-                            </div>
-                            <div class="col l4"></div>
-                            <div class="col l4">
-                                <div class="input-field">
-                                    <input id="precio" type="number" name="precio">
-                                    <label for="precio">Valor Lente</label>
-                                </div>
-                            </div>
-                            <div class="col l4">
-                                <div class="input-field">
-                                    <button class="btn fondoazul">Crear Receta</button>
-                                </div>
-                            </div>
+                        <div class="col s6">
+                            <p>direccion : {{cliente.direccion_cliente}}</p>
+                            <p>registrado en : {{cliente.fecha_creacion}}</p>
                         </div>
                     </div>
+
+
                 </div>
+
             </div>
+
+
+
+
         </div>
+
+
+
+    </div>
+
+
+    <div class="card-panel letra-oscura color-letras-formulario selects-adaptados">
+
+        <div class="row ">
+            <div class="col l12 m12 s12 center">
+                <h4>Receta</h4>
+                <br>
+            </div>
+            <div class="col l6 m12 s12 weas">
+
+                <div class="col l12 m12 s12">
+
+                    <span>tipo lente : </span>
+                    <label>
+                        <input type="radio" id="lejos" value="lejos" v-model="tipo_lentes">
+                        <span>lejos</span>
+                    </label>
+                    <label>
+                        <input type="radio" id="cerca" value="cerca" v-model="tipo_lentes">
+                        <span>cerca</span>
+                    </label>
+                    <br></br>
+                </div>
+
+                <div class="col l6 m6 s12">
+
+                    <span>tipo cristal </span>
+
+
+
+                    <select v-model="tipo_sel" class="browser-default">
+                        <option v-for="option in tipos" v-bind:value="option.id_tipo_cristal">
+                            {{ option.tipo_cristal }}
+                        </option>
+                    </select>
+                    <br>
+
+                    <span>material de cristal</span>
+
+                    <select v-model="material_sel" class="browser-default">
+                        <option v-for="option in materiales" v-bind:value="option.id_material_cristal">
+                            {{ option.material_cristal }}
+                        </option>
+                    </select>
+                    <br>
+
+                    <span>armazon</span>
+
+                    <select v-model="armazon_sel" class="browser-default">
+                        <option v-for="option in armazones" v-bind:value="option.id_armazon">
+                            {{ option.nombre_armazon }}
+                        </option>
+                    </select>
+                    <br>
+
+                </div>
+
+
+
+
+                <div class="col l6 m6 s12">
+
+                    <div class="input-field margin-inputs back-field">
+
+                        <input type="text" v-model="prisma">
+                        <label for="prisma">Prisma</label>
+
+                    </div>
+
+
+
+                    <span>base</span>
+                    <select v-model="base_sel" class="browser-default">
+                        <option value="" disabled selected hidden></option>
+                        <option value="1">superior</option>
+                        <option value="2">inferior</option>
+                        <option value="3">interna</option>
+                        <option value="4">externa</option>
+                    </select>
+                    <br>
+
+                    <div class="input-field margin-inputs back-field">
+
+                        <input type="text" v-model="distancia_p">
+                        <label for="esfera">Distancia pupilar</label>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="col l3 m6 s12 ">
+
+                <h5 class="center">Ojo izquierdo</h5>
+                <div class="input-field margin-inputs back-field">
+
+                    <input type="text" v-model="i_esfera">
+                    <label for="esfera">Esfera</label>
+
+                </div>
+
+
+                <div class="input-field margin-inputs back-field">
+                    <input type="text" v-model="i_cilindro">
+                    <label for="esfera">Cilindro</label>
+
+                </div>
+
+                <div class="input-field margin-inputs back-field">
+
+                    <input type="text" v-model="i_eje">
+                    <label for="esfera">Eje</label>
+
+                </div>
+
+
+
+            </div>
+
+            <div class="col l3 m6 s12 center ">
+
+                <h5 class="center">Ojo derecho</h5>
+
+                <div class="input-field margin-inputs back-field">
+
+                    <input type="text" v-model="d_esfera">
+                    <label for="esfera">Esfera</label>
+
+                </div>
+
+                <div class="input-field margin-inputs back-field">
+
+                    <input type="text" v-model="d_cilindro">
+                    <label for="esfera">Cilindro</label>
+
+                </div>
+
+                <div class="input-field margin-inputs back-field">
+
+                    <input type="text" v-model="d_eje">
+                    <label for="esfera">Eje</label>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+        <hr>
+
+        <div class="row margin-top-row">
+
+
+            <div class="col l6 m12 s12 center">
+
+                <div class="input-field back-field col l6 m12 s12">
+
+                    <input type="text" v-model="rut_med">
+                    <label for="valor">Rut del medico</label>
+
+                </div>
+
+
+                <div class="input-field back-field col l6 m12 s12">
+
+                    <input type="text" v-model="nom_med">
+                    <label for="valor">Nombre del medico</label>
+
+                </div>
+
+                <div class="input-field back-field col M12 s12">
+                    <textarea v-model="observacion" class="materialize-textarea" rows="10"></textarea>
+                    <label for="textarea1">Observacion</label>
+                </div>
+
+
+            </div>
+
+
+            <div class="col l6 m6 s12 center">
+
+
+                <div class="input-field back-field col l6">
+                    <input type="text" class="datepicker" name="fecha" id="fecha_entrega">
+                    <label for="fecha">Fecha de entrega</label>
+                </div>
+
+                <div class="input-field back-field col l6">
+                    <input type="text" class="datepicker" name="fecha" id="fecha_retiro">
+                    <label for="fecha">Fecha de retiro</label>
+                </div>
+
+            </div>
+
+
+
+            <div class="col l6 m6 s12 center">
+
+
+
+                <div class="input-field back-field">
+                    <input type="text" v-model="valor">
+                    <label for="valor">Valor del lente</label>
+                </div>
+
+            </div>
+
+            <div class="col l12 m12 s12 center">
+
+                <div class="input-field back-field-desactived right-align">
+                    <button v-on:click="crearReceta()" class="btn-large">Crear</button>
+                </div>
+
+            </div>
+
+
+        </div>
+        
         <?php } else {
         header("Location: ../index.php"); ?>
         <?php } ?>

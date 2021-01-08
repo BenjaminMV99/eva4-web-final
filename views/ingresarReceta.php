@@ -59,72 +59,30 @@
             <li class="active"><a href="ingresarReceta.php"><i class="material-icons white-text">save</i>Ingresar Receta</a></li>
             <li><a href="cerrarSesion.php"><i class="material-icons white-text">power_settings_new</i>Cerrar Sesión</a></li>
         </ul>
-
-
-
-
-
-
         <!-- Contenedor base-->
         <div class="container">
-
             <div id="formularioreceta">
-
                 <div class="card-panel letra-oscura">
-
                     <div class="row">
-
                         <div class="col l4 m6 s12 offset-m3">
-
                             <form @submit.prevent="buscar">
-
                                 <div class="card">
-
                                     <div class="card-content back">
-
-
                                         <h6 class="center">Buscar</h6>
-
-
-
                                         <div class="input-field">
-
                                             <input type="text" v-model="rutCliente">
                                             <label for="rut">Rut</label>
-
                                         </div>
-
                                         <div class="input-field center-align back-field-desactived">
 
                                             <button class="btn-large">Buscar</button>
                                         </div>
-
-
-
-
-
-
                                     </div>
-
-
-
-
-
                                 </div>
-
                             </form>
-
-
-
                         </div>
-
-
-
                         <div class="col l8 m12 s12 center">
-
                             <div class="card" v-if="clienteexiste">
-
-
                                 <div class="card-content back">
 
                                 <div class="row">
@@ -133,36 +91,15 @@
                                         <h6 class="center">{{cliente.nombre_cliente}}</h6>          
                                         <h4 class="center unpocodemarginbot">{{cliente.rut_cliente}}</h4>
                                     </div>
-                                    <div class="col s6">
-                                        <p>fono : {{cliente.telefono_cliente}} </p>
-                                        <p>correo : {{cliente.email_cliente}} </p>
-                                    </div>
-                                    <div class="col s6">
-                                        <p>direccion : {{cliente.direccion_cliente}}</p>
-                                        <p>registrado en : {{cliente.fecha_creacion}}</p>
-                                    </div>
-                                </div>
-
-
                             </div>
-
                         </div>
-
-
-
-
                     </div>
-
-
-
                 </div>
-
-
                 <div class="card-panel letra-oscura color-letras-formulario selects-adaptados">
 
                     <div class="row ">
                         <div class="col l12 m12 s12 center">
-                            <h4>Receta</h4>
+                            <h4 style="color: cadetblue;">Ingrese los datros de la receta</h4>
                             <br>
                         </div>
                         <div class="col l6 m12 s12 weas">
@@ -184,8 +121,6 @@
                             <div class="col l6 m6 s12">
 
                                 <span>tipo cristal </span>
-
-
 
                                 <select v-model="tipo_sel" class="browser-default">
                                     <option v-for="option in tipos" v-bind:value="option.id_tipo_cristal">
@@ -211,22 +146,13 @@
                                     </option>
                                 </select>
                                 <br>
-
                             </div>
 
-
-
-
                             <div class="col l6 m6 s12">
-
                                 <div class="input-field margin-inputs back-field">
-
                                     <input type="text" v-model="prisma">
                                     <label for="prisma">Prisma</label>
-
                                 </div>
-
-
 
                                 <span>base</span>
                                 <select v-model="base_sel" class="browser-default">
@@ -236,17 +162,14 @@
                                     <option value="3">interna</option>
                                     <option value="4">externa</option>
                                 </select>
+                    
                                 <br>
 
                                 <div class="input-field margin-inputs back-field">
-
                                     <input type="text" v-model="distancia_p">
                                     <label for="esfera">Distancia pupilar</label>
-
                                 </div>
-
                             </div>
-
                         </div>
 
 
@@ -400,23 +323,15 @@
                     <div class="card">
 
                         <div class="card-content">
-
-                            <img src="../img/logoOptica.png" alt="">
-
+                            <img src="../img/LogoLogin.png" alt="">
                             <h2 class="red-text">Te has equivocado de camino amigo</h2>
                             <h4 class="black-text">no dispones de accesso para estar aquí</h4>
                             <p>Debes iniciar sesión, vuelve al <a href="../index.php">home</a> e inicia sesión.</p>
                             <p>Creadores de la pagina: <a href="../creadores.html">creadores</a></p>
-
-
                         </div>
-
                     </div>
-
                 </div>
-
             </div>
-
         </div>
 
 
@@ -424,7 +339,7 @@
 
     <?php } ?>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
-    <script src="../js/ingresarReceta.js"></script>
+    <script src="../js/Buscar_cliente.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>

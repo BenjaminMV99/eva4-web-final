@@ -37,10 +37,9 @@ if (isset($_SESSION["user"])) {
     <?php if (isset($_SESSION["user"])) { ?>
         <nav class="teal darken-2">
             <div class="nav-wrapper">
-                <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-                <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li class="activo"><a href="gestion.php"><span title="Gestión de Usuarios"><span title="Gestión de Usuarios"><i class="fas fa-user-cog azul"></i></span></a></li>
-                    <li><a href="salir.php"><span title="Hola"><i class="exit toapp"></i></span></a></li>
+            <a href="#" class="brand-logo" style="margin-left: 50px;">BMV optica - Gestion de usuarios</a>                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li class="activo"><a href="gestion.php"><span title="Gestión de Usuarios">Gestión de usuarios</a></li>
+                    <li class="activo"><a href="salir.php"><span title="Salir">Salir</a></li>
                 </ul>
             </div>
         </nav>
@@ -67,16 +66,16 @@ if (isset($_SESSION["user"])) {
                     <?php if (isset($_SESSION["editar"])) { ?>
                         <div class="card">
                             <div class="card-content">
-                                <i class="fas fa-users fa-2x azul"></i>
-                                <h4 class="center blue-text accent-2">Editar Usuario</h4>
+                                <img style="height: 100px;" src="../img/edituser.png" >
+                                <h4  style="color: cadetblue;">Editar datos del vendedor</h4>
                                 <form action="../controllers/ControlEdit.php" method="POST">
                                     <div class="input-field">
                                         <input id="rut" type="text" name="rut" value="<?= $_SESSION["usuario"]["rut"] ?>">
-                                        <label for="rut">Rut de usuario</label>
+                                        <label for="rut">Rut del vendedor</label>
                                     </div>
                                     <div class="input-field">
                                         <input id="nombre" type="text" name="nombre" value="<?= $_SESSION["usuario"]["nombre"] ?>">
-                                        <label for="nombre">Nombre del Usuario</label>
+                                        <label for="nombre">Nombre del vendedor</label>
                                     </div>
                                     <div class="input-field col s12">
                                         <select name="estado" id="estado">
@@ -85,7 +84,7 @@ if (isset($_SESSION["user"])) {
                                         </select>
                                         <label>Estado del Vendedor</label>
                                     </div>
-                                    <button class="btn orange ancho-100 redondo">Editar Usuario</button>
+                                    <button class="btn ancho-100 ">Editar Usuario</button>
                                 </form>
                             </div>
                         </div>
@@ -96,18 +95,18 @@ if (isset($_SESSION["user"])) {
                         <!-- NUEVO USUARIO -->
                         <div class="card">
                             <div class="card-content">
-                                <i class="fas fa-users fa-2x azul"></i>
-                                <h5 class="center blue-text accent-2">Nuevo Vendedor</h5>
+                                <img src="../img/user.svg" style="height: 100px;" >
+                                <h5 style="color: cadetblue;">Datos del vendedor</h5>
                             </div>
                             <div class="card-action">
                                 <form action="../controllers/ControlInsert.php" method="POST">
                                     <div class="input-field">
                                         <input id="rut" type="text" name="rut">
-                                        <label for="rut">Rut Vendedor</label>
+                                        <label for="rut">Rut</label>
                                     </div>
                                     <div class="input-field">
                                         <input id="nombre" type="text" name="nombre">
-                                        <label for="nombre">Nombre Vendedor</label>
+                                        <label for="nombre">Nombre</label>
                                     </div>
                                     <p class="green-text">
                                         <?php if (isset($_SESSION["respuesta"])) {
@@ -125,7 +124,7 @@ if (isset($_SESSION["user"])) {
                                     <input type="hidden" name="rol" value="Vendedor">
                                     <input type="hidden" name="clave" value="123456">
                                     <input type="hidden" name="estado" value="1">
-                                    <button class="btn fondoazul">Crear Vendedor</button>
+                                    <button class="btn fondoazul">Agregar Vendedor</button>
                                 </form>
                             </div>
                         </div>
@@ -134,26 +133,27 @@ if (isset($_SESSION["user"])) {
                 <div class="col l8 m8 s12">
                     <div class="card">
                         <div class="card-content">
-                            <h4 class="center blue-text accent-2">Lista de Vendedores</h4>
+                            <h3 style="color: cadetblue;">Listado de los vendedores</h3>
                             <form action="../controllers/ControlTabla.php" method="POST">
                                 <table class="blue-text accent-2">
                                     <tr>
-                                        <th>Rut</th>
-                                        <th>Nombre</th>
-                                        <th>Estado</th>
-                                        <th>Acción</th>
+                                        <th style="color: cadetblue; font-size: 25px;">Rut</th>
+                                        <th style="color: cadetblue; font-size: 25px;">Nombre</th>
+                                        <th style="color: cadetblue; font-size: 25px;">Estado</th>
+                                        <th style="color: cadetblue; font-size: 25px;">Acción</th>
                                     </tr>
                                     <?php foreach ($usuario as $item) { ?>
                                         <tr>
-                                            <td> <?= htmlspecialchars($item["rut"]) ?> </td>
-                                            <td> <?= htmlspecialchars($item["nombre"]) ?> </td>
+                                            <td style="font-size: 20px;"> <?= htmlspecialchars($item["rut"]) ?> </td>
+                                            <td style="font-size: 20px;"> <?= htmlspecialchars($item["nombre"]) ?> </td>
                                             <?php if ($item["estado"] == 1) { ?>
-                                                <td class="green-text fa-2x"> <?= $item["estado"] = "<i class='fas fa-user-check'></i>" ?> </td>
+                                                <td  class="green-text fa-2x"> <?= $item["estado"] = "<i class='fas fa-user-check'></i>" ?> </td>
                                             <?php } else { ?>
                                                 <td class="red-text fa-2x"> <?= $item["estado"] = "<i class='fas fa-user-times'></i>" ?> </td>
                                             <?php } ?>
                                             <td>
-                                                <button name="bt_edit" value="<?= $item["rut"] ?>" class="btn-floating orange">
+                                                <button name="bt_edit" value="<?= $item["rut"] ?>" class="btn-floating cadeteblue" style="margin-right: 
+                                                10px;">
                                                     <i class="material-icons">edit</i>
                                                 </button>
                                                 <button name="bt_delete" value="<?= $item["rut"] ?>" class="btn-floating red">

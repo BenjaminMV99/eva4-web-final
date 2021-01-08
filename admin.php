@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="img/LogoLogin.png" type="image/x-icon">
     <link rel="stylesheet" href="css/estilo.css">
     <link rel="stylesheet" href="css/material.css">
-    <title>Glasses Optica - Iniciar Sesión Administrador</title>
+    <title>BMV Optica</title>
 </head>
 
 <body style="background-image: url('img/Fondo2.jpg'); background-size: cover;">

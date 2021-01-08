@@ -96,7 +96,7 @@ if (isset($_SESSION["user"])) {
                                         <button @click="abrirModal(r)" class="btn-small blue redondo">Detalle</button>
                                     </td>
                                     <td>
-                                        <img height="50" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/PDF_file_icon.svg/833px-PDF_file_icon.svg.png" alt="">
+                                        <img  @click="generearPDF(r.id)" height="50" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/PDF_file_icon.svg/833px-PDF_file_icon.svg.png" alt="">
                                     </td>
                                 </tr>
                             </table>
