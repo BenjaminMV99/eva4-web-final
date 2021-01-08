@@ -172,7 +172,7 @@
                 <div class="col l4 m4 s12">
                     <div class="card-panel center">
                         <h4 class="center red-text">Acceso Denegado!</h4>
-                        <a href="../../index.php">click aqui para iniciar</a>
+                        <a href="../views/index.php">click aqui para iniciar</a>
                     </div>
                 </div>
             </div>

@@ -37,7 +37,7 @@ if (isset($_SESSION["user"])) {
                     <a href="#" class="brand-logo" style="margin-left: 50px;">BMV optica - Ingreso de cliente</a>                        <ul id="nav-mobile" class="right hide-on-med-and-down">
                             <li><a href="clientes.php">Ingresar Clientes</a></li>
                             <li><a href="buscarReceta.php">Ingresar Recetas</a></li>
-                            <li><a href="IngresarReceta.php">Ingresar Recetas</a></li>
+                            <li><a href="ingreso.php">Ingresar Recetas</a></li>
                             <li><a href="salir.php">Cerrar Sesión</a></li>
                         </ul>
                     </div>

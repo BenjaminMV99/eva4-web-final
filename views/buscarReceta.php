@@ -33,8 +33,8 @@ if (isset($_SESSION["user"])) {
     <?php if (isset($_SESSION["user"])) { ?>
         <nav class="teal darken-2">
             <div class="nav-wrapper">
-                <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <a href="#" class="brand-logo" style="margin-left: 50px;">BMV optica - Buscar Recetas</a>                        
+                    <ul id="nav-mobile" class="right hide-on-med-and-down">
                     <li><a href="clientes.php">Ingresar Clientes</a></li>
                     <li><a href="buscarReceta.php">Buscar recetas</a></li>
                     <li><a href="ingreso.php">Ingresar recetas</a></li>
@@ -44,14 +44,14 @@ if (isset($_SESSION["user"])) {
         </nav>
         <div class="container">
             <div class="row">
-                <!-- NAV MOVIL -->
+                <!-- barra del modo movil-->
                 <ul id="slide-out" class="sidenav fondoazul">
                     <li>
                         <div class="user-view">
                             <div class="background">
-                                <img src="https://www.designyourway.net/blog/wp-content/uploads/2016/07/Dark-wallpaper-desktop-background-30-700x438.jpg">
+                                <img src="../img/back.jpg">
                             </div>
-                            <a href="buscarReceta.php"><img class="circle" src="../img/perfilnav.jpg"></a>
+                            <a href="buscarReceta.php"><img class="circle" src="../img/me.jpg"></a>
                             <a href="buscarReceta.php" class="brand-logo white-text"><?= $_SESSION["user"]["nombre"] ?></a>
                         </div>
                     </li>
@@ -61,7 +61,7 @@ if (isset($_SESSION["user"])) {
                     <li><a class="white-text" href="salir.php">Salir<i class="fas fa-power-off fa-2x white-text"></i></a></li>
                 </ul>
 
-                <!-- FIN DE NAV -->
+                <!-- FIN de la barra -->
 
                 <div class="col l12 m4 s12">
                     <div class="card colorborde" id="app">
