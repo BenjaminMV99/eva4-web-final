@@ -29,7 +29,7 @@ if (isset($_SESSION["user"])) {
     <link rel="stylesheet" href="css/estilo.css">
     <link rel="stylesheet" href="css/material.css">
     <link rel="shortcut icon" href="../img/LogoLogin.png" type="image/x-icon">
-    <title>BMV optica Gestionde los usuarios</title>
+    <title>BMV optica Gestionde</title>
 </head>
 <body>
 
