@@ -21,7 +21,7 @@ class LoginController
   public function iniciarSesion()
   {
     if ($this->rut == "" || $this->clave == "") {
-      $_SESSION["error"] = "<i class='fas fa-exclamation-circle'></i> Complete los datos";
+      $_SESSION["error"] = "<></i>Porfavor completa todos los campos";
       header("Location: ../admin.php");
       return;
     }
@@ -30,13 +30,13 @@ class LoginController
     $array = $model->buscarUsuarioAdmin($this->rut, $this->clave);
 
     if (!$model->buscarUsuarioAdmin($this->rut, $this->clave) == true) {
-      $_SESSION["error"] = "<i class='fas fa-exclamation-circle'></i> El usuario no es Administrador";
+      $_SESSION["error"] = "<i></i> Debes ser Administraodor para poder ingresar";
       header("Location: ../admin.php");
       return;
     }
 
     if (count($array) == 0) {
-      $_SESSION["error"] = "<i class='fas fa-exclamation-circle'></i> Email o Contraseña Incorrectos";
+      $_SESSION["error"] = "<></i> Datos erroneos";
       header("Location: ../admin.php");
       return;
     }

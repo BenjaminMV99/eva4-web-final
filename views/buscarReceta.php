@@ -24,7 +24,7 @@ if (isset($_SESSION["user"])) {
     <link rel="stylesheet" href="../css/style.css">
     <link rel='stylesheet' href='../css/estilos.css' />
     <link rel="shortcut icon" href="../img/LogoLogin.png" type="image/x-icon">
-    <title>Glasses Optica - Buscar Receta</title>
+    <title>BMV Optica</title>
 </head>
 
 <body style="background-image: url('../img/Fondo2.jpg'); background-size: cover;">

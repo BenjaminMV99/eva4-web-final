@@ -21,7 +21,7 @@ class LoginController
   public function iniciarSesion()
   {
     if ($this->rut == "" || $this->clave == "") {
-      $_SESSION["error"] = "<i class='fas fa-exclamation-circle'></i> Complete los datos";
+      $_SESSION["error"] = "<></i> Porfavor completa todos los campos";
       header("Location: ../index.php");
       return;
     }
@@ -30,7 +30,7 @@ class LoginController
     $array = $model->buscarUsuarioVendedor($this->rut, $this->clave);
 
     if (count($array) == 0) {
-      $_SESSION["error"] = "<i class='fas fa-exclamation-circle'></i> Usuario no encotrado";
+      $_SESSION["error"] = "<></i> Usuario No a sido encontrado";
       header("Location: ../index.php");
       return;
     }

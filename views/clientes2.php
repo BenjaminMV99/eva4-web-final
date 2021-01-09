@@ -17,6 +17,7 @@ if (isset($_SESSION["user"])) {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,10 +26,11 @@ if (isset($_SESSION["user"])) {
     <link rel="stylesheet" href="css/estilo.css">
     <link rel="stylesheet" href="css/material.css">
     <link rel="shortcut icon" href="../img/LogoLogin.png" type="image/x-icon">
-    <title>BMV Optica</title>
+    <title>Glasses Optica</title>
 
 </head>
-<body>
+
+<body style="background-image: url('../img/Fondo2.jpg'); background-size: cover;">
     <?php if (isset($_SESSION["user"])) { ?>
         <nav class="teal darken-2">
                     <div class="nav-wrapper">
@@ -42,8 +44,7 @@ if (isset($_SESSION["user"])) {
                 </nav>
         <div class="container">
             <div class="row">
-
-                <!-- NAV MOVIL -->
+                <!-- Barra de navegacion en modo movil -->
                 <ul id="slide-out" class="sidenav blue accent-2">
                     <li>
                         <div class="user-view">
@@ -60,72 +61,67 @@ if (isset($_SESSION["user"])) {
                     <li><a class="white-text" href="salir.php">Salir<i class="fas fa-power-off fa-2x white-text"></i></a></li>
                 </ul>
 
-                <!-- FIN DE NAV -->
+                <!-- Fin de la barra -->
                 <div class="col l2 m4 s12"></div>
-                <div class="col l8 m4 s12">
-                    <div class="card">
-                        <div class="card-content">
-                            <h4 style="color: cadetblue;">ingrese los datos del cliente</h4>
-                            <p class="green-text">
-                                <?php if (isset($_SESSION["respuestaCli"])) {
-                                    echo $_SESSION["respuestaCli"];
-                                    unset($_SESSION["respuestaCli"]);
-                                } ?>
-                            </p>
-                            <p class="red-text">
-                                <?php if (isset($_SESSION["errorCli"])) {
-                                    echo $_SESSION["errorCli"];
-                                    unset($_SESSION["errorCli"]);
-                                } ?>
-                            </p>
-                            <p class="red-text">
-                                <?php if (isset($_SESSION["respuesta"])) {
-                                    echo $_SESSION["respuesta"];
-                                    unset($_SESSION["respuesta"]);
-                                } ?>
-                            </p>
-                            <form action="../controllers/ClienteController.php" method="POST">
-                                <div class="input-field col l4">
-                                    <i class="material-icons md-blue prefix">account_box</i>
-                                    <input id="clirut" type="text" name="clirut">
-                                    <label for="clirut">Rut del cinete</label>
-                                </div>
-                                <div class="input-field col l8">
-                                    <i class="material-icons md-blue prefix">perm_identity</i>
-                                    <input id="cliname" type="text" name="cliname">
-                                    <label for="cliname">Nombre  del cinete</label>
-                                </div>
-                                <div class="input-field col l12">
-                                    <i class="material-icons md-blue prefix">business</i>
-                                    <input id="clidir" type="text" name="clidir">
-                                    <label for="clidir">Dirección  del cinete </label>
-                                </div>
-                                <div class="input-field col l6">
-                                    <i class="material-icons md-blue prefix">call</i>
-                                    <input id="clifono" type="number" name="clifono">
-                                    <label for="clifono">Teléfono  del cinete</label>
-                                </div>
-                                <div class="input-field col l6">
-                                    <i class="material-icons md-blue prefix">date_range</i>
-                                    <input id="icon_prefix" type="text" class="validate datepicker" name="clifecha">
-                                    <label for="icon_prefix">Fecha de creación</label>
-                                </div>
-                                <div class="input-field col l12">
-                                    <i class="material-icons md-blue prefix">alternate_email</i>
-                                    <input id="cliemail" type="email" name="cliemail">
-                                    <label for="cliemail">Correo Eléctronico  del cinete</label>
-                                </div>
-                                <button class="btn fondoazul">Crear Nuevo Cliente</button>
-                            </form>
-                        </div>
+                <div style="background-color: white; border-radius: 10px; border: 1px solid #dadce0; margin: 50px 0px 0px 200px; width: 600px; padding: 50px;"  >
+                <form action="../controllers/ClienteController.php" method="POST">
+                    <h5>Ingrese los datos del cliente</h5>
+                    <br>
+                    <div class="input-field">
+                        <i class="material-icons prefix">lock_outline</i>
+                        <input id="r" type="text" name="rut">
+                        <label for="r">Rut del clinte</label>
+                    </div> 
+                    <div class="input-field">
+                        <i class="material-icons prefix">account_circle</i>
+                        <input id="n" type="text" name="name">
+                        <label for="n">Nombre del cliente</label>
                     </div>
-                </div>
+                    <div class="input-field">
+                        <i class="material-icons prefix">home</i>
+                        <input id="d" type="text" name="direccion">
+                        <label for="d">Dirección del cliente</label>
+                    </div>
+                    <div class="input-field">
+                        <i class="material-icons prefix">phone</i>
+                        <input id="t" type="text" name="telefono">
+                        <label for="t">Telefono del cliente</label>
+                    </div>
+                    <div class="input-field">
+                        <i class="material-icons prefix">date_range</i>
+                        <input type="text" class="datepicker" id="f" name="fecha">
+                        <label for="f">Fecha de creacion </label>
+                    </div>
+                    <div class="input-field">
+                        <i class="material-icons prefix">email</i>
+                        <input id="e" type="text" name="email">
+                        <label for="e">Email del cliente</label>
+                    </div> 
+                    <button class="waves-effect waves-light btn ancho-100 cadeteblue" style="margin-left: 200px;">Añadir</button>
+                </form>
+
+                <p class="green-text center">
+                    <?php
+                        if(isset($_SESSION['c_resp'])){
+                            echo $_SESSION['c_resp'];
+                            unset($_SESSION['c_resp']);
+                        }
+                    ?>
+                </p>
+                <p class="red-text center">
+                    <?php
+                        if(isset($_SESSION['c_error'])){
+                            echo $_SESSION['c_error'];
+                            unset($_SESSION['c_error']);
+                        }
+                    ?>
+                </p>
+            </div>
             </div>
         </div>
 
     <?php } else {
         header("Location: ../index.php"); ?>
-
     <?php } ?>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script>
@@ -145,13 +141,14 @@ if (isset($_SESSION["user"])) {
                     done: 'Aceptar'
                 }
             });
-
             var elems = document.querySelectorAll('.sidenav');
             var instances = M.Sidenav.init(elems);
         });
     </script>
     <script src='https://kit.fontawesome.com/2c36e9b7b1.js' crossorigin='anonymous'></script>
     <link rel='stylesheet' href='https://pro.fontawesome.com/releases/v5.10.0/css/all.css' integrity='sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p' crossorigin='anonymous' />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
 </body>
 
 </html>
