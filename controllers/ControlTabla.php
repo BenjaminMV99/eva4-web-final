@@ -25,11 +25,11 @@ class ControlTabla
       $usuario = $modelo->buscarUsuario($this->bt_edit);
       $_SESSION["usuario"] = $usuario[0];
 
-      header("Location: ../views/gestion.php");
+      header("Location: ../views/vistaGestion.php");
     } else {
       $modelo = new UsuarioModel();
       $modelo->eliminarUsuario($this->bt_delete);
-      header("Location: ../views/gestion.php");
+      header("Location: ../views/vistaGestion.php");
     }
   }
 }

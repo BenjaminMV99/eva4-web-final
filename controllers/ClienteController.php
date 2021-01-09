@@ -30,7 +30,7 @@ class ClienteController
   {
     if ($this->clirut == "" || $this->cliname == "" || $this->clidir == "" || $this->clifono == "" || $this->clifecha == "" || $this->cliemail == "") {
       $_SESSION["errorCli"] = "<i></i> Porfavor relle todos los campos";
-      header("Location: ../views/clientes.php");
+      header("Location: ../views/vistaClientes.php");
       return;
     }
 
@@ -50,7 +50,7 @@ class ClienteController
     } else {
       $_SESSION["errorCli"] = "<></i> Los datos generan un error en la base de datos";
     }
-    header("Location: ../views/clientes.php");
+    header("Location: ../views/vistaClientes.php");
   }
 }
 

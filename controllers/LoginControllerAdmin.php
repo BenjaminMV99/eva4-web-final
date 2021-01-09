@@ -22,7 +22,7 @@ class LoginController
   {
     if ($this->rut == "" || $this->clave == "") {
       $_SESSION["error"] = "<></i>Porfavor completa todos los campos";
-      header("Location: ../admin.php");
+      header("Location: ../Loginadmin.php");
       return;
     }
 
@@ -31,19 +31,19 @@ class LoginController
 
     if (!$model->buscarUsuarioAdmin($this->rut, $this->clave) == true) {
       $_SESSION["error"] = "<i></i> Debes ser Administraodor para poder ingresar";
-      header("Location: ../admin.php");
+      header("Location: ../Loginadmin.php");
       return;
     }
 
     if (count($array) == 0) {
       $_SESSION["error"] = "<></i> Datos erroneos";
-      header("Location: ../admin.php");
+      header("Location: ../Loginadmin.php");
       return;
     }
 
     $_SESSION["user"] = $array[0];
 
-    header("Location: ../views/gestion.php");
+    header("Location: ../views/vistaGestion.php");
   }
 }
 

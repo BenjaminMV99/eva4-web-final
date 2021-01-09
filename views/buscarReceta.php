@@ -33,9 +33,9 @@ if (isset($_SESSION["user"])) {
             <div class="nav-wrapper">
                     <a href="#" class="brand-logo" style="margin-left: 50px;">BMV optica - Buscar Recetas</a>                        
                     <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a href="clientes.php">Ingresar Clientes</a></li>
+                    <li><a href="vistaClientes.php">Ingresar Clientes</a></li>
                     <li><a href="buscarReceta.php">Buscar recetas</a></li>
-                    <li><a href="ingreso.php">Ingresar recetas</a></li>
+                    <li><a href="vistaingreso.php">Ingresar recetas</a></li>
                     <li><a href="salir.php">Cerrar Sesión</a></li>
                 </ul>
             </div>
@@ -53,9 +53,9 @@ if (isset($_SESSION["user"])) {
                             <a href="buscarReceta.php" class="brand-logo white-text"><?= $_SESSION["user"]["nombre"] ?></a>
                         </div>
                     </li>
-                    <li><a class="white-text" href="clientes.php">Crear Cliente<i class="fas fa-user-plus fa-2x white-text"></i></a></li>
+                    <li><a class="white-text" href="vistaClientes.php">Crear Cliente<i class="fas fa-user-plus fa-2x white-text"></i></a></li>
                     <li class="activeo"><a class="white-text" href="buscarReceta.php">Buscar Receta<i class="fas fa-file-search fa-2x white-text"></i></a></li>
-                    <li><a class="white-text" href="ingreso.php">Ingreso de Receta<i class="fas fa-file-plus fa-2x white-text"></i></a></li>
+                    <li><a class="white-text" href="vistaingreso.php">Ingreso de Receta<i class="fas fa-file-plus fa-2x white-text"></i></a></li>
                     <li><a class="white-text" href="salir.php">Salir<i class="fas fa-power-off fa-2x white-text"></i></a></li>
                 </ul>
                 <!-- FIN de la barra -->

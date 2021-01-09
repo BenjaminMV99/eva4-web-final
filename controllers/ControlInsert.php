@@ -28,7 +28,7 @@ class ControlInsert
   {
     if ($this->rut == "" || $this->nombre == "") {
       $_SESSION["error"] = "Campos Vacios";
-      header("Location: ../views/gestion.php");
+      header("Location: ../views/vistaGestion.php");
       return;
     }
 
@@ -41,7 +41,7 @@ class ControlInsert
     } else {
       $_SESSION["error"] = "<i class='fas fa-exclamation-circle'></i> Hubo un error a nivel de base de datos";
     }
-    header("Location: ../views/gestion.php");
+    header("Location: ../views/vistaGestion.php");
   }
 }
 

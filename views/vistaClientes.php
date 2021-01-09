@@ -34,9 +34,9 @@ if (isset($_SESSION["user"])) {
         <nav class="teal darken-2">
                     <div class="nav-wrapper">
                     <a href="#" class="brand-logo" style="margin-left: 50px;">BMV optica - Ingreso de cliente</a>                        <ul id="nav-mobile" class="right hide-on-med-and-down">
-                            <li><a href="clientes.php">Ingresar Clientes</a></li>
+                            <li><a href="vistaClientes.php">Ingresar Clientes</a></li>
                             <li><a href="buscarReceta.php">Ingresar Recetas</a></li>
-                            <li><a href="ingreso.php">Ingresar Recetas</a></li>
+                            <li><a href="vistaingreso.php">Ingresar Recetas</a></li>
                             <li><a href="salir.php">Cerrar Sesión</a></li>
                         </ul>
                     </div>
@@ -88,19 +88,19 @@ if (isset($_SESSION["user"])) {
                             <form action="../controllers/ClienteController.php" method="POST">
                                 <div class="input-field col l8">
                                     <input id="clirut" type="text" name="clirut">
-                                    <label for="clirut">Rut del cinete</label>
+                                    <label for="clirut">Rut del cliente</label>
                                 </div>
                                 <div class="input-field col l8">
                                     <input id="cliname" type="text" name="cliname">
-                                    <label for="cliname">Nombre  del cinete</label>
+                                    <label for="cliname">Nombre  del cliente</label>
                                 </div>
                                 <div class="input-field col l18">
                                     <input id="clidir" type="text" name="clidir">
-                                    <label for="clidir">Dirección  del cinete </label>
+                                    <label for="clidir">Dirección  del cliente </label>
                                 </div>
                                 <div class="input-field col l8">
                                     <input id="clifono" type="number" name="clifono">
-                                    <label for="clifono">Teléfono  del cinete</label>
+                                    <label for="clifono">Teléfono  del cliente</label>
                                 </div>
                                 <div class="input-field col l8">
                                     <input id="icon_prefix" type="text" class="validate datepicker" name="clifecha">
@@ -108,7 +108,7 @@ if (isset($_SESSION["user"])) {
                                 </div>
                                 <div class="input-field col l12">
                                     <input id="cliemail" type="email" name="cliemail">
-                                    <label for="cliemail">Correo Eléctronico  del cinete</label>
+                                    <label for="cliemail">Correo Eléctronico  del cliente</label>
                                 </div>
                                 <button class="btn cadeteblue" style="margin-left:220px ;">Crear Nuevo Cliente</button>
                             </form>

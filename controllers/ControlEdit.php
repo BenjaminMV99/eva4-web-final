@@ -24,7 +24,7 @@ class ControlEdit
   {
     if ($this->rut == "" || $this->nombre == "") {
       $_SESSION["errorEdit"] = "<i class='fas fa-exclamation-circle'></i>  Completa todos los campos";
-      header("Location: ../views/gestion.php");
+      header("Location: ../views/vistaGestion.php");
       return;
     }
 
@@ -37,7 +37,7 @@ class ControlEdit
     } else {
       $_SESSION["errorEdit"] = "<i class='fas fa-exclamation-circle'></i>  Error en la Base de Datos";
     }
-    header("Location: ../views/gestion.php");
+    header("Location: ../views/vistaGestion.php");
   }
 }
 

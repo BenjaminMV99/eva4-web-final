@@ -31,7 +31,7 @@ if (isset($_SESSION["usuario"])) {
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a href="sass.html"></a></li>
         <li><a href="views/abaut.php">Acerca de</a></li>
-        <li><a href="admin.php">Ingreso de admin</a></li>
+        <li><a href="Loginadmin.php">Ingreso de admin</a></li>
         <li><a href="collapsible.html"></a></li>
       </ul>
     </div>

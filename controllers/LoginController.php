@@ -37,7 +37,7 @@ class LoginController
 
     $_SESSION["user"] = $array[0];
 
-    header("Location: ../views/clientes.php");
+    header("Location: ../views/vistaClientes.php");
   }
 }
 

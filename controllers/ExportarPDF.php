@@ -4,7 +4,7 @@ namespace controllers;
 
 use models\RecetaModel as RecetaModel;
 
-require_once("../models/RecetaModel.php.php");
+require_once("../models/RecetaModel.php");
 require_once("tcpdf_include.php");
 
 class ExportarPDF{

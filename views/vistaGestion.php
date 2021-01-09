@@ -38,7 +38,7 @@ if (isset($_SESSION["user"])) {
         <nav class="teal darken-2">
             <div class="nav-wrapper">
             <a href="#" class="brand-logo" style="margin-left: 50px;">BMV optica - Gestion de usuarios</a>                <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li class="activo"><a href="gestion.php"><span title="Gestión de Usuarios">Gestión de usuarios</a></li>
+                    <li class="activo"><a href="vistaGestion.php"><span title="Gestión de Usuarios">Gestión de usuarios</a></li>
                     <li class="activo"><a href="salir.php"><span title="Salir">Salir</a></li>
                 </ul>
             </div>
@@ -52,11 +52,11 @@ if (isset($_SESSION["user"])) {
                             <div class="background">
                                 <img src="https://www.designyourway.net/blog/wp-content/uploads/2016/07/Dark-wallpaper-desktop-background-30-700x438.jpg">
                             </div>
-                            <a href="gestion.php"><img class="circle" src="../img/perfilnav.jpg"></a>
-                            <a href="gestion.php" class="brand-logo white-text"><?= $_SESSION["user"]["nombre"] ?></a>
+                            <a href="vistaGestion.php"><img class="circle" src="../img/perfilnav.jpg"></a>
+                            <a href="vistaGestion.php" class="brand-logo white-text"><?= $_SESSION["user"]["nombre"] ?></a>
                         </div>
                     </li>
-                    <li class="active"><a class="white-text" href="gestion.php">Gestión de Usuarios<i class="fas fa-user-cog fa-2x white-text"></i></a></li>
+                    <li class="active"><a class="white-text" href="vistaGestion.php">Gestión de Usuarios<i class="fas fa-user-cog fa-2x white-text"></i></a></li>
                     <li><a class="white-text" href="salir.php">Salir<i class="fas fa-power-off fa-2x white-text"></i></a></li>
                 </ul>
 
