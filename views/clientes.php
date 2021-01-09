@@ -62,7 +62,7 @@ if (isset($_SESSION["user"])) {
 
                 <!-- FIN DE NAV -->
                 <div class="col l2 m4 s12"></div>
-                <div class="col l8 m4 s12">
+                <div class="col l8 m4 s12" s>
                     <div class="card">
                         <div class="card-content">
                             <h4 style="color: cadetblue;">ingrese los datos del cliente</h4>
@@ -85,37 +85,31 @@ if (isset($_SESSION["user"])) {
                                 } ?>
                             </p>
                             <form action="../controllers/ClienteController.php" method="POST">
-                                <div class="input-field col l4">
-                                    <i class="material-icons md-blue prefix">account_box</i>
+                                <div class="input-field col l8">
                                     <input id="clirut" type="text" name="clirut">
                                     <label for="clirut">Rut del cinete</label>
                                 </div>
                                 <div class="input-field col l8">
-                                    <i class="material-icons md-blue prefix">perm_identity</i>
                                     <input id="cliname" type="text" name="cliname">
                                     <label for="cliname">Nombre  del cinete</label>
                                 </div>
-                                <div class="input-field col l12">
-                                    <i class="material-icons md-blue prefix">business</i>
+                                <div class="input-field col l18">
                                     <input id="clidir" type="text" name="clidir">
                                     <label for="clidir">Dirección  del cinete </label>
                                 </div>
-                                <div class="input-field col l6">
-                                    <i class="material-icons md-blue prefix">call</i>
+                                <div class="input-field col l8">
                                     <input id="clifono" type="number" name="clifono">
                                     <label for="clifono">Teléfono  del cinete</label>
                                 </div>
-                                <div class="input-field col l6">
-                                    <i class="material-icons md-blue prefix">date_range</i>
+                                <div class="input-field col l8">
                                     <input id="icon_prefix" type="text" class="validate datepicker" name="clifecha">
                                     <label for="icon_prefix">Fecha de creación</label>
                                 </div>
                                 <div class="input-field col l12">
-                                    <i class="material-icons md-blue prefix">alternate_email</i>
                                     <input id="cliemail" type="email" name="cliemail">
                                     <label for="cliemail">Correo Eléctronico  del cinete</label>
                                 </div>
-                                <button class="btn fondoazul">Crear Nuevo Cliente</button>
+                                <button class="btn cadeteblue" style="margin-left:220px ;">Crear Nuevo Cliente</button>
                             </form>
                         </div>
                     </div>
