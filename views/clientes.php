@@ -25,7 +25,7 @@ if (isset($_SESSION["user"])) {
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="css/estilo.css">
     <link rel="stylesheet" href="css/material.css">
-    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../img/LogoLogin.png" type="image/x-icon">
     <title>Glasses Optica - Gestión Clientes</title>
 
 </head>

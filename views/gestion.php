@@ -28,7 +28,7 @@ if (isset($_SESSION["user"])) {
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="css/estilo.css">
     <link rel="stylesheet" href="css/material.css">
-    <link rel="shortcut icon" href="../img/Logo" type="image/x-icon">
+    <link rel="shortcut icon" href="../img/LogoLogin.png" type="image/x-icon">
     <title>Glasses Optica - Gestión de Usuarios</title>
 </head>
 <body>

@@ -14,10 +14,8 @@ if (isset($_SESSION["user"])) {
   $usuario = $model->getAllUsuarios();
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,7 +23,7 @@ if (isset($_SESSION["user"])) {
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
     <link rel='stylesheet' href='../css/estilos.css' />
-    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../img/LogoLogin.png" type="image/x-icon">
     <title>Glasses Optica - Buscar Receta</title>
 </head>
 
@@ -60,9 +58,7 @@ if (isset($_SESSION["user"])) {
                     <li><a class="white-text" href="ingreso.php">Ingreso de Receta<i class="fas fa-file-plus fa-2x white-text"></i></a></li>
                     <li><a class="white-text" href="salir.php">Salir<i class="fas fa-power-off fa-2x white-text"></i></a></li>
                 </ul>
-
                 <!-- FIN de la barra -->
-
                 <div class="col l12 m4 s12">
                     <div class="card colorborde" id="app">
                         <div class="card-content">
@@ -137,7 +133,6 @@ if (isset($_SESSION["user"])) {
                 </div>
             </div>
         </div>
-
     <?php } else {header("Location: ../index.php"); ?>
     <?php } ?>
 
@@ -163,7 +158,6 @@ if (isset($_SESSION["user"])) {
                     done: 'Aceptar'
                 }
             });
-
             var elems = document.querySelectorAll('.sidenav');
             var instances = M.Sidenav.init(elems);
 
