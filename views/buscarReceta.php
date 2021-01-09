@@ -62,11 +62,15 @@ if (isset($_SESSION["user"])) {
                 <div class="col l12 m4 s12">
                     <div class="card colorborde" id="app">
                         <div class="card-content">
-                            <h4 class="azul">Buscar Receta</h4>
+                            <h4 style="color: cadetblue;">Buscar Receta</h4>
+                            <hr>
+                            <br><br>
                             <div class="col l5">
                                 <form @submit.prevent="buscarRut">
                                     <input type="text" v-model="rut" placeholder="Rut Cliente">
                                     <button class="btn-small fondoazul">Buscar</button>
+                                    <br><br>
+                                    <hr>
                                 </form>
                             </div>
                             <div class="col l2"></div>
@@ -74,6 +78,7 @@ if (isset($_SESSION["user"])) {
                                 <form @submit.prevent="buscarFecha">
                                     <input type="date" v-model="fecha" placeholder="2020-05-14">
                                     <button class="btn-small fondoazul">Buscar</button>
+                                    <hr>
                                 </form>
                             </div>
                             <table>
