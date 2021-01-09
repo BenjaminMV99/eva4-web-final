@@ -28,7 +28,8 @@ if (isset($_SESSION["user"])) {
     <title>BMV Optica</title>
 
 </head>
-<body>
+
+<body style="background-image: url('../img/Fondo2.jpg'); background-size: cover;">
     <?php if (isset($_SESSION["user"])) { ?>
         <nav class="teal darken-2">
                     <div class="nav-wrapper">
@@ -62,8 +63,8 @@ if (isset($_SESSION["user"])) {
 
                 <!-- FIN DE NAV -->
                 <div class="col l2 m4 s12"></div>
-                <div class="col l8 m4 s12" s>
-                    <div class="card">
+                <div class="col l8 m4 s12">
+                    <div class="card" style="margin-top: 50px;">
                         <div class="card-content">
                             <h4 style="color: cadetblue;">ingrese los datos del cliente</h4>
                             <p class="green-text">
