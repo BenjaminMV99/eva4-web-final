@@ -29,7 +29,7 @@ class ClienteController
   public function crearCliente()
   {
     if ($this->clirut == "" || $this->cliname == "" || $this->clidir == "" || $this->clifono == "" || $this->clifecha == "" || $this->cliemail == "") {
-      $_SESSION["errorCli"] = "<i class='fas fa-exclamation-circle'></i> Complete los campos vacios";
+      $_SESSION["errorCli"] = "<i></i> Porfavor relle todos los campos";
       header("Location: ../views/clientes.php");
       return;
     }
@@ -46,9 +46,9 @@ class ClienteController
 
     $count = $model->insertarCliente($dataCli);
     if ($count == 1) {
-      $_SESSION["respuestaCli"] = "<i class='fas fa-check-circle'></i> Cliente creado con éxito";
+      $_SESSION["respuestaCli"] = "<></i> El cliente fue creado";
     } else {
-      $_SESSION["errorCli"] = "<i class='fas fa-exclamation-circle'></i> Hubo un error en la base de datos";
+      $_SESSION["errorCli"] = "<></i> Los datos generan un error en la base de datos";
     }
     header("Location: ../views/clientes.php");
   }
